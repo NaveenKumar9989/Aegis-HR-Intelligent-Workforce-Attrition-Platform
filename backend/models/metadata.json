@@ -1,0 +1,253 @@
+{
+  "best_model_name": "Random Forest",
+  "trained_at": "2026-09-21T07:59:06.368809",
+  "metrics": {
+    "accuracy": 0.8469,
+    "precision": 0.5208,
+    "recall": 0.5319,
+    "f1_score": 0.5263,
+    "roc_auc": 0.7908,
+    "pr_auc": 0.4718,
+    "confusion_matrix": {
+      "true_negative": 224,
+      "false_positive": 23,
+      "false_negative": 22,
+      "true_positive": 25,
+      "matrix": [
+        [
+          224,
+          23
+        ],
+        [
+          22,
+          25
+        ]
+      ]
+    },
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.004,
+        0.008,
+        0.024,
+        0.028,
+        0.032,
+        0.049,
+        0.053,
+        0.061,
+        0.065,
+        0.069,
+        0.081,
+        0.085,
+        0.093,
+        0.109,
+        0.121,
+        0.126,
+        0.146,
+        0.154,
+        0.162,
+        0.166,
+        0.17,
+        0.202,
+        0.206,
+        0.283,
+        0.291,
+        0.332,
+        0.381,
+        0.425,
+        0.644,
+        0.7,
+        0.733,
+        0.773,
+        0.907,
+        0.98
+      ],
+      "tpr": [
+        0.0,
+        0.064,
+        0.085,
+        0.106,
+        0.128,
+        0.149,
+        0.191,
+        0.298,
+        0.34,
+        0.362,
+        0.383,
+        0.404,
+        0.468,
+        0.511,
+        0.532,
+        0.553,
+        0.574,
+        0.596,
+        0.617,
+        0.638,
+        0.66,
+        0.681,
+        0.702,
+        0.723,
+        0.745,
+        0.766,
+        0.787,
+        0.809,
+        0.83,
+        0.851,
+        0.894,
+        0.915,
+        0.936,
+        0.957,
+        0.979,
+        1.0
+      ]
+    },
+    "feature_importances": [
+      {
+        "feature": "MonthlyIncome",
+        "importance": 0.0765
+      },
+      {
+        "feature": "Age",
+        "importance": 0.0635
+      },
+      {
+        "feature": "TotalWorkingYears",
+        "importance": 0.0568
+      },
+      {
+        "feature": "DailyRate",
+        "importance": 0.046
+      },
+      {
+        "feature": "YearsAtCompany",
+        "importance": 0.0459
+      },
+      {
+        "feature": "HourlyRate",
+        "importance": 0.0397
+      },
+      {
+        "feature": "DistanceFromHome",
+        "importance": 0.039
+      },
+      {
+        "feature": "MonthlyRate",
+        "importance": 0.0386
+      },
+      {
+        "feature": "YearsWithCurrManager",
+        "importance": 0.0381
+      },
+      {
+        "feature": "OverTime_Yes",
+        "importance": 0.0376
+      },
+      {
+        "feature": "NumCompaniesWorked",
+        "importance": 0.0361
+      },
+      {
+        "feature": "OverTime_No",
+        "importance": 0.0344
+      },
+      {
+        "feature": "StockOptionLevel",
+        "importance": 0.0324
+      },
+      {
+        "feature": "PercentSalaryHike",
+        "importance": 0.0303
+      },
+      {
+        "feature": "JobLevel",
+        "importance": 0.029
+      }
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9105691056910569,
+        "recall": 0.9068825910931174,
+        "f1-score": 0.9087221095334685,
+        "support": 247.0
+      },
+      "1": {
+        "precision": 0.5208333333333334,
+        "recall": 0.5319148936170213,
+        "f1-score": 0.5263157894736842,
+        "support": 47.0
+      },
+      "accuracy": 0.8469387755102041,
+      "macro avg": {
+        "precision": 0.7157012195121951,
+        "recall": 0.7193987423550694,
+        "f1-score": 0.7175189495035763,
+        "support": 294.0
+      },
+      "weighted avg": {
+        "precision": 0.8482644073889718,
+        "recall": 0.8469387755102041,
+        "f1-score": 0.8475891263946594,
+        "support": 294.0
+      }
+    },
+    "cv_roc_auc_mean": 0.8027,
+    "cv_roc_auc_std": 0.0345,
+    "cv_f1_mean": 0.4717,
+    "cv_f1_std": 0.0804
+  },
+  "feature_count": 51,
+  "features": [
+    "Age",
+    "DailyRate",
+    "DistanceFromHome",
+    "Education",
+    "EnvironmentSatisfaction",
+    "HourlyRate",
+    "JobInvolvement",
+    "JobLevel",
+    "JobSatisfaction",
+    "MonthlyIncome",
+    "MonthlyRate",
+    "NumCompaniesWorked",
+    "PercentSalaryHike",
+    "PerformanceRating",
+    "RelationshipSatisfaction",
+    "StockOptionLevel",
+    "TotalWorkingYears",
+    "TrainingTimesLastYear",
+    "WorkLifeBalance",
+    "YearsAtCompany",
+    "YearsInCurrentRole",
+    "YearsSinceLastPromotion",
+    "YearsWithCurrManager",
+    "BusinessTravel_Non-Travel",
+    "BusinessTravel_Travel_Frequently",
+    "BusinessTravel_Travel_Rarely",
+    "Department_Human Resources",
+    "Department_Research & Development",
+    "Department_Sales",
+    "EducationField_Human Resources",
+    "EducationField_Life Sciences",
+    "EducationField_Marketing",
+    "EducationField_Medical",
+    "EducationField_Other",
+    "EducationField_Technical Degree",
+    "Gender_Female",
+    "Gender_Male",
+    "JobRole_Healthcare Representative",
+    "JobRole_Human Resources",
+    "JobRole_Laboratory Technician",
+    "JobRole_Manager",
+    "JobRole_Manufacturing Director",
+    "JobRole_Research Director",
+    "JobRole_Research Scientist",
+    "JobRole_Sales Executive",
+    "JobRole_Sales Representative",
+    "MaritalStatus_Divorced",
+    "MaritalStatus_Married",
+    "MaritalStatus_Single",
+    "OverTime_No",
+    "OverTime_Yes"
+  ]
+}
