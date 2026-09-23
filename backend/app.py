@@ -6,6 +6,7 @@ single prediction, batch CSV inference, and what-if simulation.
 
 import io
 import json
+import os
 import sys
 from pathlib import Path
 
