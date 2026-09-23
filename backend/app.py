@@ -23,9 +23,10 @@ from backend.pipeline.data_loader import DataLoader
 from backend.pipeline.trainer import ModelTrainer
 from backend.pipeline.predictor import AttritionPredictor
 
+_STATIC_DIR = BASE_DIR / "public" if (BASE_DIR / "public").exists() else BASE_DIR / "frontend"
 app = Flask(
     __name__,
-    static_folder=str(BASE_DIR / "frontend"),
+    static_folder=str(_STATIC_DIR),
     static_url_path=""
 )
 
@@ -98,6 +99,18 @@ def get_model_metrics():
 def trigger_training():
     """Triggers end-to-end retraining of models."""
     try:
+        # In cloud serverless environments (e.g. Vercel), disk is read-only.
+        # Gracefully handle training request without throwing 500 error.
+        if os.environ.get("VERCEL"):
+            if METRICS_PATH.exists():
+                with open(METRICS_PATH, "r", encoding="utf-8") as f:
+                    metrics_data = json.load(f)
+                return jsonify({
+                    "success": True,
+                    "message": "Vercel Serverless Mode: Production models are pre-trained and active. Dynamic disk retraining is disabled in serverless functions.",
+                    "data": metrics_data
+                })
+
         trainer = ModelTrainer()
         report = trainer.train_and_evaluate()
         # Reload predictor with fresh artifacts
@@ -108,6 +121,12 @@ def trigger_training():
             "message": "Model training completed successfully.",
             "data": report
         })
+    except OSError as e:
+        # Handles read-only filesystem errors gracefully
+        return jsonify({
+            "success": False,
+            "error": "Serverless read-only filesystem: model artifacts cannot be overwritten."
+        }), 403
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 

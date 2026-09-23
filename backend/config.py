@@ -9,7 +9,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "WA_Fn-UseC_-HR-Employee-Attrition.csv"
 MODELS_DIR = BASE_DIR / "backend" / "models"
-MODELS_DIR.mkdir(parents=True, exist_ok=True)
+try:
+    MODELS_DIR.mkdir(parents=True, exist_ok=True)
+except OSError:
+    pass
 
 # Target Column
 TARGET_COL = "Attrition"
