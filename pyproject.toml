@@ -1,2 +1,8 @@
+[project]
+name = "aegis-hr"
+version = "0.1.0"
+description = "Aegis HR Intelligent Workforce Attrition Platform"
+requires-python = ">=3.9"
+
 [tool.vercel]
 entrypoint = "backend.app:app"
